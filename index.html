@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CHANGE: Update this to your preferred page title -->
+  <title>Stephy Jeffy — Video Portfolio</title>
+
+  <!-- Google Fonts (do not change) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Lottie animation player (do not change) -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       NAV
+       ════════════════════════════════════════ -->
+  <nav>
+    <!-- CHANGE: Replace "Stephy Jeffy" with your name -->
+    <a class="logo" href="#">
+      <span class="logo-gem"></span>
+      Stephy Jeffy
+    </a>
+    <div class="nav-r">
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════
+       TICKER BAR
+       CHANGE: Edit the text inside each
+       ticker-item to list your disciplines.
+       Keep the duplicate set in sync below.
+       ════════════════════════════════════════ -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">Tech Promos <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Cinematic Video <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Creative Direction <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Color Grading <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Motion Design <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Visual Storytelling <span class="ticker-dot"></span></span>
+      <!-- Duplicate set keeps the scroll seamless -->
+      <span class="ticker-item">Tech Promos <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Cinematic Video <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Creative Direction <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Color Grading <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Motion Design <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Visual Storytelling <span class="ticker-dot"></span></span>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════ -->
+  <div class="hero-wrap" id="home">
+    <div class="hero">
+
+      <!-- LEFT COLUMN — text, buttons, stats -->
+      <div class="hero-left">
+
+        <!-- CHANGE: Edit the headline text -->
+        <p class="hero-overline">Video Portfolio</p>
+        <h1 class="hero-h1">
+          Motion<br>&amp; <em>Technology</em><br>Unified
+        </h1>
+        <p class="hero-body">
+          Cinematic tech promotions and creative video work —
+          each frame crafted with precision and intention.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#work" class="btn-primary">
+            View work
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn-outline">Get in touch</a>
+        </div>
+
+        <!-- Availability strip — CHANGE text if you are not available -->
+        <div class="hero-availability">
+          <lottie-player
+            src="https://assets10.lottiefiles.com/packages/lf20_myejiggj.json"
+            background="transparent" speed="0.8"
+            style="width:52px;height:52px;flex-shrink:0;"
+            loop autoplay>
+          </lottie-player>
+          <div>
+            <p class="hero-avail-label">Currently available</p>
+            <p class="hero-avail-sub">Open to new projects &amp; collaborations</p>
+          </div>
+        </div>
+
+        <!-- Stats — CHANGE numbers to match your actual output -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-n">12+</div>
+            <div class="stat-l">Videos</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-n">3</div>
+            <div class="stat-l">Disciplines</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-n">2+</div>
+            <div class="stat-l">Years</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN — preview cards (hidden on mobile) -->
+      <!--
+        HOW TO ADD YOUR VIDEO TO THE HERO CARDS:
+        1. Set data-video="https://www.youtube.com/embed/VIDEO_ID"
+           Get VIDEO_ID from your YouTube URL: youtube.com/watch?v=VIDEO_ID
+        2. Replace the img src with your own thumbnail:
+           - Upload a JPG to your repo: src="thumbnails/my-video.jpg"
+           - Or use YouTube's auto thumbnail:
+             https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg
+        3. Update the tag and title text
+      -->
+      <div class="hero-right">
+
+        <div class="hero-feature-card" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80"
+               alt="Featured video thumbnail" loading="lazy" />
+          <div class="hero-card-overlay">
+            <!-- CHANGE: Tag and title for this featured video -->
+            <span class="hero-card-tag">Featured · Tech</span>
+            <p class="hero-card-title">Your Latest Tech Promo</p>
+          </div>
+        </div>
+
+        <div class="hero-mini-row">
+          <div class="hero-mini-card" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+                 alt="Video thumbnail" loading="lazy" />
+            <div class="hero-mini-info">
+              <span class="mini-tag">Cinematic</span>
+              <p class="mini-title">Short Film Reel</p>
+            </div>
+          </div>
+          <div class="hero-mini-card" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=500&q=80"
+                 alt="Video thumbnail" loading="lazy" />
+            <div class="hero-mini-info">
+              <span class="mini-tag">Creative</span>
+              <p class="mini-title">Personal Project</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       WORK GRID
+       ════════════════════════════════════════ -->
+  <div id="work">
+    <div class="filter-wrap">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="tech">Tech</button>
+        <button class="filter-btn" data-filter="cinematic">Cinematic</button>
+        <button class="filter-btn" data-filter="creative">Creative</button>
+      </div>
+      <!-- CHANGE: Update this number when you add/remove cards -->
+      <span class="section-count" id="vcount">7 videos</span>
+    </div>
+
+    <div class="grid-wrap">
+      <h2 class="section-label">Selected <span>Work</span></h2>
+
+      <!--
+        ════════════════════════════════════════════════════
+        HOW TO ADD OR EDIT A VIDEO CARD
+        ════════════════════════════════════════════════════
+
+        Each card block looks like this — there are 6 things to change:
+
+        <div class="vcard  [1]LAYOUT"  data-cat="[2]CATEGORY"  data-video="[3]VIDEO_URL">
+          <div class="vthumb">
+            <img src="[4]THUMBNAIL_URL" alt="..." loading="lazy" />
+            ...
+            <span class="vdur">[5]DURATION</span>
+          </div>
+          <div class="vinfo">
+            <span class="vtag [6]TAG_CLASS">[CATEGORY LABEL]</span>
+            <h3 class="vtitle">YOUR VIDEO TITLE</h3>
+            <p class="vmeta">YEAR</p>
+          </div>
+        </div>
+
+        [1] LAYOUT CLASS — pick one:
+            v-feat  = wide card (spans 8/12 cols) — use for your best video
+            v-tall  = tall card (spans 4 cols, 2 rows) — always pair with a v-feat
+            v-half  = half-width (6 cols)
+            v-third = one-third width (4 cols)
+
+        [2] CATEGORY — controls the filter tabs:
+            "tech"  |  "cinematic"  |  "creative"
+
+        [3] VIDEO URL — your YouTube embed link:
+            Format: https://www.youtube.com/embed/VIDEO_ID
+            Find VIDEO_ID in: youtube.com/watch?v=VIDEO_ID
+
+        [4] THUMBNAIL URL — two options:
+            Option A (recommended): Upload a JPG to your repo then use:
+                                    src="thumbnails/my-video.jpg"
+            Option B (automatic):   https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg
+
+        [5] DURATION — e.g. "2:30"
+
+        [6] TAG CLASS — matches the category colour:
+            tag-t = Tech (slate blue)
+            tag-c = Cinematic (gold)
+            tag-r = Creative (rose)
+
+        To ADD a new card: copy any card block, paste inside .video-grid,
+        update the 6 things above, and bump the vcount number up by 1.
+        To REMOVE a card: delete its entire block and bump vcount down by 1.
+        ════════════════════════════════════════════════════
+      -->
+
+      <div class="video-grid" id="vgrid">
+
+        <!-- CARD 1 — Featured wide -->
+        <div class="vcard v-feat" data-cat="tech" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+          <div class="vthumb">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80" alt="Tech promo" loading="lazy" />
+            <div class="vthumb-scrim"></div>
+            <div class="play"><div class="play-ring"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            <span class="vdur">3:42</span>
+          </div>
+          <div class="vinfo">
+            <span class="vtag tag-t">Tech</span>
+            <h3 class="vtitle">Your Featured Project Title</h3>
+            <p class="vmeta">2024 · Featured Work</p>
+          </div>
+        </div>
+
+        <!-- CARD 2 — Tall sidebar (pairs with cards 3+4) -->
+        <div class="vcard v-tall" data-cat="cinematic" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+          <div class="vthumb">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=700&q=80" alt="Cinematic" loading="lazy" />
+            <div class="vthumb-scrim"></div>
+            <div class="play"><div class="play-ring"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            <span class="vdur">5:07</span>
+          </div>
+          <div class="vinfo">
+            <span class="vtag tag-c">Cinematic</span>
+            <h3 class="vtitle">Short Film or Reel Title</h3>
+            <p class="vmeta">2024</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 — Half width -->
+        <div class="vcard v-half" data-cat="tech" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+          <div class="vthumb">
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&q=80" alt="Tech" loading="lazy" />
+            <div class="vthumb-scrim"></div>
+            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            <span class="vdur">2:18</span>
+          </div>
+          <div class="vinfo">
+            <span class="vtag tag-t">Tech</span>
+            <h3 class="vtitle">Product Promo Title Here</h3>
+            <p class="vmeta">2024</p>
+          </div>
+        </div>
+
+        <!-- CARD 4 — Half width -->
+        <div class="vcard v-half" data-cat="creative" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+          <div class="vthumb">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=700&q=80" alt="Creative" loading="lazy" />
+            <div class="vthumb-scrim"></div>
+            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            <span class="vdur">4:30</span>
+          </div>
+          <div class="vinfo">
+            <span class="vtag tag-r">Creative</span>
+            <h3 class="vtitle">Creative Project Title</h3>
+            <p class="vmeta">2024</p>
+          </div>
+        </div>
+
+        <!-- CARD 5 — One third -->
+        <div class="vcard v-third" data-cat="tech" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+          <div class="vthumb">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80" alt="Tech" loading="lazy" />
+            <div class="vthumb-scrim"></div>
+            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            <span class="vdur">1:55</span>
+          </div>
+          <div class="vinfo">
+            <span class="vtag tag-t">Tech</span>
+            <h3 class="vtitle">Tech Showcase Video</h3>
+            <p class="vmeta">2024</p>
+          </div>
+        </div>
+
+        <!-- CARD 6 — One third -->
+        <div class="vcard v-third" data-cat="cinematic" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+          <div class="vthumb">
+            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80" alt="Cinematic" loading="lazy" />
+            <div class="vthumb-scrim"></div>
+            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            <span class="vdur">6:12</span>
+          </div>
+          <div class="vinfo">
+            <span class="vtag tag-c">Cinematic</span>
+            <h3 class="vtitle">Visual Storytelling Piece</h3>
+            <p class="vmeta">2023</p>
+          </div>
+        </div>
+
+        <!-- CARD 7 — One third -->
+        <div class="vcard v-third" data-cat="creative" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+          <div class="vthumb">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Creative" loading="lazy" />
+            <div class="vthumb-scrim"></div>
+            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            <span class="vdur">3:20</span>
+          </div>
+          <div class="vinfo">
+            <span class="vtag tag-r">Creative</span>
+            <h3 class="vtitle">Personal Project Title</h3>
+            <p class="vmeta">2023</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       SERVICES / WHAT I CREATE
+       CHANGE: Edit titles and descriptions
+       ════════════════════════════════════════ -->
+  <div class="services">
+    <div class="services-inner">
+      <div>
+        <h2 class="services-head">What I<br><em>Create</em></h2>
+      </div>
+      <div class="services-grid">
+
+        <div class="svc">
+          <lottie-player class="svc-lottie"
+            src="https://assets4.lottiefiles.com/packages/lf20_qp1q7mct.json"
+            background="transparent" speed="0.7" loop autoplay>
+          </lottie-player>
+          <p class="svc-num">01</p>
+          <p class="svc-title">Tech Promos</p>
+          <p class="svc-desc">Cinematic product videos that blend precision visuals with compelling narrative for tech brands.</p>
+        </div>
+
+        <div class="svc">
+          <lottie-player class="svc-lottie"
+            src="https://assets3.lottiefiles.com/packages/lf20_jtbfg2nb.json"
+            background="transparent" speed="0.7" loop autoplay>
+          </lottie-player>
+          <p class="svc-num">02</p>
+          <p class="svc-title">Cinematic Work</p>
+          <p class="svc-desc">Short films, reels, and atmospheric sequences that prioritise mood and visual craft.</p>
+        </div>
+
+        <div class="svc">
+          <lottie-player class="svc-lottie"
+            src="https://assets9.lottiefiles.com/packages/lf20_xyadoh9h.json"
+            background="transparent" speed="0.7" loop autoplay>
+          </lottie-player>
+          <p class="svc-num">03</p>
+          <p class="svc-title">Creative Projects</p>
+          <p class="svc-desc">Personal and collaborative work that pushes outside commercial briefs into pure expression.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       ABOUT
+       ════════════════════════════════════════ -->
+  <div id="about">
+    <div class="about">
+
+      <div class="about-img-wrap">
+        <div class="about-img-frame">
+          <!-- CHANGE: Upload your photo to the repo and update src.
+               e.g. src="images/me.jpg" -->
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+               alt="Stephy Jeffy" loading="lazy" />
+        </div>
+      </div>
+
+      <div>
+        <p class="about-overline">About</p>
+        <!-- CHANGE: Your name -->
+        <h2 class="about-h2">Stephy <em>Jeffy</em></h2>
+        <!-- CHANGE: Your bio -->
+        <div class="about-body">
+          <p>A video creator working at the intersection of technology and visual storytelling. I produce cinematic tech promotional content alongside personal creative projects — each piece built with a clear point of view.</p>
+          <p>From product launches to short films, every project is an opportunity to push the frame further. Open to collaborations, commissions, and interesting briefs.</p>
+        </div>
+        <!-- CHANGE: Edit or add/remove skill tags -->
+        <div class="about-skills">
+          <span class="skill">Tech Promos</span>
+          <span class="skill">Cinematography</span>
+          <span class="skill">Color Grading</span>
+          <span class="skill">Motion Design</span>
+          <span class="skill">Creative Direction</span>
+          <span class="skill">Post-Production</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       CONTACT
+       CHANGE: Your email, YouTube, Instagram
+       ════════════════════════════════════════ -->
+  <div id="contact" class="contact">
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-h2">Let's make<br><em>something great</em></h2>
+        <p class="contact-sub">Have a project in mind or just want to say hello? Reach out through any of the channels below.</p>
+      </div>
+      <div class="contact-right">
+
+        <!-- CHANGE: your@email.com in both href and ci-value -->
+        <a href="mailto:your@email.com" class="contact-item">
+          <div>
+            <span class="ci-label">Email</span>
+            <span class="ci-value">your@email.com</span>
+          </div>
+          <div class="ci-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+
+        <!-- CHANGE: your YouTube channel URL and handle -->
+        <a href="https://youtube.com/@stephyjeffy" target="_blank" class="contact-item">
+          <div>
+            <span class="ci-label">YouTube</span>
+            <span class="ci-value">@stephyjeffy</span>
+          </div>
+          <div class="ci-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+
+        <!-- CHANGE: your Instagram URL and handle -->
+        <a href="https://instagram.com/stephyjeffy" target="_blank" class="contact-item">
+          <div>
+            <span class="ci-label">Instagram</span>
+            <span class="ci-value">@stephyjeffy</span>
+          </div>
+          <div class="ci-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+       FOOTER — CHANGE: name and year
+       ════════════════════════════════════════ -->
+  <footer>
+    <span class="footer-logo">
+      <span class="footer-gem"></span>
+      Stephy Jeffy
+    </span>
+    <span>&copy; 2025 &middot; All rights reserved</span>
+  </footer>
+
+
+  <!-- Modal video player — do not edit -->
+  <div class="modal" id="modal" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-x" onclick="closeModal()">&#x2715;</button>
+      <div class="modal-frame">
+        <iframe id="mframe" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your JavaScript file -->
+  <script src="main.js"></script>
+
+</body>
+</html>
