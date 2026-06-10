@@ -1,529 +1,625 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- CHANGE: Update this to your preferred page title -->
-  <title>Stephy Jeffy — Video Portfolio</title>
+  <!-- ═══════════════════════════════════════
+       SEO — Primary Meta
+  ═══════════════════════════════════════ -->
+  <title>Stephaun Martin | Photographer &amp; Videographer — Florida</title>
+  <meta name="description" content="Stephaun Martin is a Florida-based photographer and videographer specializing in portraits, events, cinematic tech promos, and short films. Available for bookings." />
+  <meta name="keywords" content="photographer Florida, videographer Florida, portrait photographer, event photographer, cinematic videography, Stephaun Martin, Stephy Productions" />
+  <meta name="author" content="Stephaun Martin" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://stephyjeffy.github.io/" />
 
-  <!-- Google Fonts (do not change) -->
+  <!-- ═══════════════════════════════════════
+       SEO — Open Graph (Facebook, LinkedIn)
+  ═══════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Stephaun Martin | Photographer &amp; Videographer" />
+  <meta property="og:description" content="Florida-based visual creator — portrait photography, event coverage, and cinematic videography. Open to bookings." />
+  <meta property="og:url" content="https://stephyjeffy.github.io/" />
+  <meta property="og:image" content="https://stephyjeffy.github.io/stephy.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Stephaun Martin Portfolio" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ═══════════════════════════════════════
+       SEO — Twitter Card
+  ═══════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stephaun Martin | Photographer &amp; Videographer" />
+  <meta name="twitter:description" content="Florida-based visual creator — portrait photography, event coverage, and cinematic videography." />
+  <meta name="twitter:image" content="https://stephyjeffy.github.io/stephy.png" />
+
+  <!-- ═══════════════════════════════════════
+       SEO — Structured Data (JSON-LD)
+  ═══════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Stephaun Martin",
+    "alternateName": "Stephy Productions",
+    "url": "https://stephyjeffy.github.io/",
+    "image": "https://stephyjeffy.github.io/stephy.png",
+    "jobTitle": "Photographer & Videographer",
+    "description": "Florida-based visual creator specializing in portrait photography, event photography, cinematic videography, and tech promotional content.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "email": "martinstephaun01@gmail.com",
+    "sameAs": [
+      "https://instagram.com/stephyjeffy",
+      "https://www.youtube.com/@Stephy_Production"
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Portrait Photography",
+        "description": "Professional portrait sessions for individuals, graduates, and professionals."
+      },
+      {
+        "@type": "Offer",
+        "name": "Event Photography",
+        "description": "Full event coverage including weddings, graduations, and corporate events."
+      },
+      {
+        "@type": "Offer",
+        "name": "Cinematic Videography",
+        "description": "Cinematic video production including tech promos, short films, and creative content."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 
-  <!-- Lottie animation player (do not change) -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
-
-  <!-- Your stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ════════════════════════════════════════
-       NAV
-       ════════════════════════════════════════ -->
-  <nav>
-    <!-- CHANGE: Replace "Stephy Jeffy" with your name -->
-    <a class="logo" href="#">
-      <span class="logo-gem"></span>
-      Stephaun Martin
-    </a>
-    <div class="nav-r">
-      <ul class="nav-links">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
-        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-        <svg id="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-      </button>
-    </div>
+  <!-- ═══════════════════════════════════════
+       NAV (hidden on landing, shown after)
+  ═══════════════════════════════════════ -->
+  <nav class="site-nav hidden" id="site-nav" role="navigation" aria-label="Main navigation">
+    <button class="nav-logo" onclick="goHome()" aria-label="Return to home">Stephaun Martin</button>
+    <ul class="nav-links-row" role="list">
+      <li><a href="#work" onclick="scrollToWork(); return false;">Work</a></li>
+      <li><a href="#about" onclick="scrollToAbout(); return false;">About</a></li>
+      <li><a href="#contact" onclick="scrollToContact(); return false;">Contact</a></li>
+      <li>
+        <div class="nav-mode-pill" role="group" aria-label="Switch portfolio section">
+          <button class="mode-btn" id="nav-photo-btn" onclick="showPhoto()" aria-label="Photography portfolio">Photo</button>
+          <button class="mode-btn" id="nav-video-btn" onclick="showVideo()" aria-label="Videography portfolio">Video</button>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-
-  <!-- ════════════════════════════════════════
-       TICKER BAR
-       CHANGE: Edit the text inside each
-       ticker-item to list your disciplines.
-       Keep the duplicate set in sync below.
-       ════════════════════════════════════════ -->
-  <div class="ticker">
-    <div class="ticker-track">
-      <span class="ticker-item">Tech Promos <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Cinematic Video <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Creative Direction <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Color Grading <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Motion Design <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Visual Storytelling <span class="ticker-dot"></span></span>
-      <!-- Duplicate set keeps the scroll seamless -->
-      <span class="ticker-item">Tech Promos <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Cinematic Video <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Creative Direction <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Color Grading <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Motion Design <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Visual Storytelling <span class="ticker-dot"></span></span>
-    </div>
+  <!-- Mobile menu drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">&#x2715;</button>
+    <nav>
+      <a href="#work" class="mobile-link" onclick="scrollToWork(); closeMobileMenu();">Work</a>
+      <a href="#about" class="mobile-link" onclick="scrollToAbout(); closeMobileMenu();">About</a>
+      <a href="#contact" class="mobile-link" onclick="scrollToContact(); closeMobileMenu();">Contact</a>
+      <div class="mobile-mode-btns">
+        <button onclick="showPhoto(); closeMobileMenu();">Photography</button>
+        <button onclick="showVideo(); closeMobileMenu();">Videography</button>
+      </div>
+    </nav>
   </div>
 
 
-  <!-- ════════════════════════════════════════
-       HERO
-       ════════════════════════════════════════ -->
-  <div class="hero-wrap" id="home">
-    <div class="hero">
+  <!-- ═══════════════════════════════════════
+       LANDING — SPLIT PORTAL
+  ═══════════════════════════════════════ -->
+  <main id="landing" role="main" aria-label="Portfolio entry — choose Photography or Videography">
 
-      <!-- LEFT COLUMN — text, buttons, stats -->
-      <div class="hero-left">
+    <div class="portal-half" id="portal-photo" onclick="showPhoto()" role="button" tabindex="0"
+         aria-label="Enter Photography portfolio" onkeydown="if(event.key==='Enter')showPhoto()">
+      <div class="portal-bg" aria-hidden="true"></div>
+      <div class="portal-num" aria-hidden="true">01</div>
+      <div class="portal-content">
+        <p class="portal-label" aria-hidden="true">Portfolio — 01</p>
+        <h2 class="portal-title">Photo&shy;graphy</h2>
+        <p class="portal-sub">Stills that hold a moment. Portraits, events, and editorial work shot with intention and craft.</p>
+        <span class="portal-cta" aria-hidden="true">
+          Enter
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </div>
 
-        <!-- CHANGE: Edit the headline text -->
-        <p class="hero-overline">Video Portfolio</p>
-        <h1 class="hero-h1">
-          Motion<br>&amp; <em>Technology</em><br>Unified
-        </h1>
-        <p class="hero-body">
-          Cinematic tech promotions and creative video work —
-          each frame crafted with precision and intention.
-        </p>
+    <div class="portal-divider" aria-hidden="true"></div>
 
-        <div class="hero-btns">
-          <a href="#work" class="btn-primary">
-            View work
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
-            </svg>
+    <div class="portal-half" id="portal-video" onclick="showVideo()" role="button" tabindex="0"
+         aria-label="Enter Videography portfolio" onkeydown="if(event.key==='Enter')showVideo()">
+      <div class="portal-bg" aria-hidden="true"></div>
+      <div class="portal-num" aria-hidden="true">02</div>
+      <div class="portal-content">
+        <p class="portal-label" aria-hidden="true">Portfolio — 02</p>
+        <h2 class="portal-title">Video&shy;graphy</h2>
+        <p class="portal-sub">Cinematic work from tech promos to short films — every frame built with purpose and precision.</p>
+        <span class="portal-cta" aria-hidden="true">
+          Enter
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="portal-brand" aria-hidden="true">
+      <p class="portal-brand-name">Stephaun Martin</p>
+      <p class="portal-brand-sub">Visual Creator</p>
+    </div>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════
+       PHOTOGRAPHY PAGE
+  ═══════════════════════════════════════ -->
+  <div class="page" id="photo-page" aria-label="Photography portfolio">
+
+    <!-- Two-column layout: sidebar + grid -->
+    <div class="photo-layout">
+
+      <!-- Sidebar -->
+      <aside class="photo-sidebar" id="photo-sidebar" role="complementary" aria-label="Photography navigation">
+        <div class="sidebar-logo" aria-hidden="true">
+          <svg viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="52">
+            <path d="M5 35 L20 8 L30 25 L38 14 L55 35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Photography categories">
+          <button class="sidebar-link active" data-filter="all">All Work</button>
+          <button class="sidebar-link" data-filter="portraits">Portraits</button>
+          <button class="sidebar-link" data-filter="events">Events</button>
+          <button class="sidebar-link" data-filter="editorial">Editorial</button>
+          <button class="sidebar-link" data-filter="lifestyle">Lifestyle</button>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-thumb" aria-hidden="true">
+          <img src="stephy.png" alt="Stephaun Martin" loading="lazy" />
+        </div>
+
+        <div class="sidebar-social" aria-label="Social links">
+          <a href="mailto:martinstephaun01@gmail.com" aria-label="Email" title="Email">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           </a>
-          <a href="#contact" class="btn-outline">Get in touch</a>
+          <a href="https://instagram.com/stephyjeffy" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Stephy_Production" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+          </a>
         </div>
 
-        <!-- Availability strip — CHANGE text if you are not available -->
-        <div class="hero-availability">
-          <lottie-player
-            src="https://assets10.lottiefiles.com/packages/lf20_myejiggj.json"
-            background="transparent" speed="0.8"
-            style="width:52px;height:52px;flex-shrink:0;"
-            loop autoplay>
-          </lottie-player>
-          <div>
-            <p class="hero-avail-label">Currently available</p>
-            <p class="hero-avail-sub">Open to new projects &amp; collaborations</p>
+        <a href="#photo-contact" class="sidebar-book-btn" onclick="scrollToPhotoContact()">
+          Book a session
+        </a>
+      </aside>
+
+      <!-- Main photo grid (masonry) -->
+      <section class="photo-main" id="photo-work">
+        <div class="photo-grid" id="photo-grid">
+
+          <!-- PORTRAITS -->
+          <div class="photo-item reveal" data-cat="portraits" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open portrait photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=85" alt="Portrait photography by Stephaun Martin" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Portraits</span></div>
           </div>
+
+          <div class="photo-item reveal" data-cat="portraits" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open portrait photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=85" alt="Male portrait by Stephaun Martin" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Portraits</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="editorial" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open editorial photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1554244933-d876deb6b2ff?w=800&q=85" alt="Editorial photography" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Editorial</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="events" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open event photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=800&q=85" alt="Event photography" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Events</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="lifestyle" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open lifestyle photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1520342868574-5fa3804e551c?w=800&q=85" alt="Lifestyle photography" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Lifestyle</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="portraits" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open portrait photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&q=85" alt="Portrait by Stephaun Martin" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Portraits</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="portraits" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open portrait photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800&q=85" alt="Female portrait" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Portraits</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="events" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open event photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1509460913899-515f1df34fea?w=800&q=85" alt="Event photography" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Events</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="editorial" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open editorial photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=85" alt="Editorial fashion photography" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Editorial</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="lifestyle" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open lifestyle photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=85" alt="Lifestyle photography" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Lifestyle</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="portraits" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open portrait photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=85" alt="Professional portrait" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Portraits</span></div>
+          </div>
+
+          <div class="photo-item reveal" data-cat="events" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="Open event photo" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=85" alt="Event photography" loading="lazy" />
+            <div class="photo-overlay"><span class="photo-caption">Events</span></div>
+          </div>
+
         </div>
 
-        <!-- Stats — CHANGE numbers to match your actual output -->
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="stat-n">12+</div>
-            <div class="stat-l">Videos</div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat-n">3</div>
-            <div class="stat-l">Disciplines</div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat-n">2+</div>
-            <div class="stat-l">Years</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT COLUMN — preview cards (hidden on mobile) -->
-      <!--
-        HOW TO ADD YOUR VIDEO TO THE HERO CARDS:
-        1. Set data-video="https://www.youtube.com/embed/VIDEO_ID"
-           Get VIDEO_ID from your YouTube URL: youtube.com/watch?v=VIDEO_ID
-        2. Replace the img src with your own thumbnail:
-           - Upload a JPG to your repo: src="thumbnails/my-video.jpg"
-           - Or use YouTube's auto thumbnail:
-             https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg
-        3. Update the tag and title text
-      -->
-      <div class="hero-right">
-
-        <div class="hero-feature-card" data-video="https://www.youtube.com/embed/giwSVPmT2TU">
-          <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&q=80"
-               alt="Featured video thumbnail" loading="lazy" />
-          <div class="hero-card-overlay">
-            <!-- CHANGE: Tag and title for this featured video -->
-            <span class="hero-card-tag">Featured · Tech</span>
-            <p class="hero-card-title">Your Latest Tech Promo</p>
-          </div>
+        <!-- Photo count -->
+        <div class="photo-count-row" aria-live="polite">
+          <span id="photo-count">12 photos</span>
         </div>
 
-        <div class="hero-mini-row">
-          <div class="hero-mini-card" data-video="https://www.youtube.com/embed/RtSsmuZ2Z78">
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-                 alt="Video thumbnail" loading="lazy" />
-            <div class="hero-mini-info">
-              <span class="mini-tag">Cinematic</span>
-              <p class="mini-title">Three Students, Three Perspectives | What We Learned This Semester at Saint Leo University</p>
+        <!-- About + Contact (inside photo page) -->
+        <section class="about-section" id="about" aria-label="About Stephaun Martin">
+          <div class="about-photo-frame reveal">
+            <img src="stephy.png" alt="Stephaun Martin, photographer and videographer based in Florida" loading="lazy" />
+            <span class="about-photo-label photo-label">Photographer</span>
+          </div>
+          <div class="about-content">
+            <p class="section-eyebrow">About</p>
+            <h2 class="about-h2">Stephaun<br><em class="photo-em">Martin</em></h2>
+            <div class="about-body">
+              <p>A visual creator based in Florida, working across photography and videography to tell stories that matter. My photography is rooted in portraiture and documentary — I look for the unguarded moment, the quality of light, the expression that says more than words can.</p>
+              <p>Every shoot is a collaboration. Whether you're booking a portrait session, an event, or an editorial project, I bring a clear visual point of view and genuine care for the work.</p>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Portraiture</span>
+              <span class="skill-tag">Documentary</span>
+              <span class="skill-tag">Events</span>
+              <span class="skill-tag">Editorial</span>
+              <span class="skill-tag">Color Grading</span>
+              <span class="skill-tag">Retouching</span>
             </div>
           </div>
-          <div class="hero-mini-card" data-video="https://www.youtube.com/embed/eg556imFXnk">
-            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80"
-                 alt="Video thumbnail" loading="lazy" />
-            <div class="hero-mini-info">
-              <span class="mini-tag">Creative</span>
-              <p class="mini-title">Dear Youger Me</p>
+        </section>
+
+        <section class="contact-section" id="photo-contact" aria-label="Book a photography session">
+          <div class="contact-inner">
+            <div>
+              <h2 class="contact-h2">Book a<br><em class="photo-em">session</em></h2>
+              <p class="contact-sub">Ready to create something together? Reach out and let's talk about your project, timeline, and vision.</p>
+              <a href="mailto:martinstephaun01@gmail.com" class="booking-cta photo-cta">
+                Send an inquiry
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+            <div class="contact-links" aria-label="Contact links">
+              <a href="mailto:martinstephaun01@gmail.com" class="ci">
+                <div class="ci-left">
+                  <span class="ci-label">Email</span>
+                  <span class="ci-value">martinstephaun01@gmail.com</span>
+                </div>
+                <div class="ci-arrow" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+              <a href="https://instagram.com/stephyjeffy" target="_blank" rel="noopener" class="ci">
+                <div class="ci-left">
+                  <span class="ci-label">Instagram</span>
+                  <span class="ci-value">@stephyjeffy</span>
+                </div>
+                <div class="ci-arrow" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/@Stephy_Production" target="_blank" rel="noopener" class="ci">
+                <div class="ci-left">
+                  <span class="ci-label">YouTube</span>
+                  <span class="ci-value">@Stephy_Production</span>
+                </div>
+                <div class="ci-arrow" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
             </div>
           </div>
-        </div>
+        </section>
 
+        <footer class="site-footer">
+          <span class="footer-name">Stephaun Martin</span>
+          <span>&copy; 2026 &middot; All rights reserved</span>
+        </footer>
+      </section>
+    </div><!-- /photo-layout -->
+
+  </div><!-- /photo-page -->
+
+
+  <!-- ═══════════════════════════════════════
+       VIDEOGRAPHY PAGE
+  ═══════════════════════════════════════ -->
+  <div class="page" id="video-page" aria-label="Videography portfolio">
+
+    <!-- Hero -->
+    <header class="video-hero">
+      <div class="video-hero-inner">
+        <p class="section-eyebrow vid-eye">Videography</p>
+        <h1 class="hero-display vid-display">
+          Motion &amp;<br><em>Intention</em>
+        </h1>
+        <p class="hero-lead">Cinematic tech promos, short films, and creative work — every frame built with a clear point of view.</p>
+        <a href="#video-work" class="booking-cta vid-cta" onclick="document.getElementById('video-work').scrollIntoView({behavior:'smooth'}); return false;">
+          View work
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </a>
       </div>
+      <div class="video-hero-stats" aria-label="Statistics">
+        <div class="vid-stat">
+          <span class="vid-stat-n">4+</span>
+          <span class="vid-stat-l">Films</span>
+        </div>
+        <div class="vid-stat">
+          <span class="vid-stat-n">3</span>
+          <span class="vid-stat-l">Disciplines</span>
+        </div>
+        <div class="vid-stat">
+          <span class="vid-stat-n">2+</span>
+          <span class="vid-stat-l">Years</span>
+        </div>
+      </div>
+    </header>
 
-    </div>
-  </div>
-
-
-  <!-- ════════════════════════════════════════
-       WORK GRID
-       ════════════════════════════════════════ -->
-  <div id="work">
-    <div class="filter-wrap">
-      <div class="filter-group">
+    <!-- Filter + Grid -->
+    <section class="video-section" id="video-work" aria-label="Video work">
+      <div class="video-filter-bar" role="group" aria-label="Filter videos by category">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="tech">Tech</button>
         <button class="filter-btn" data-filter="cinematic">Cinematic</button>
+        <button class="filter-btn" data-filter="tech">Tech</button>
         <button class="filter-btn" data-filter="creative">Creative</button>
+        <span class="vcount" id="vcount" aria-live="polite">4 videos</span>
       </div>
-      <!-- CHANGE: Update this number when you add/remove cards -->
-      <span class="section-count" id="vcount">7 videos</span>
-    </div>
 
-    <div class="grid-wrap">
-      <h2 class="section-label">Selected <span>Work</span></h2>
+      <div class="video-grid">
 
-      <!--
-        ════════════════════════════════════════════════════
-        HOW TO ADD OR EDIT A VIDEO CARD
-        ════════════════════════════════════════════════════
-
-        Each card block looks like this — there are 6 things to change:
-
-        <div class="vcard  [1]LAYOUT"  data-cat="[2]CATEGORY"  data-video="[3]VIDEO_URL">
+        <!-- Featured card -->
+        <article class="vcard v-feat reveal" data-cat="cinematic" data-video="https://www.youtube.com/embed/giwSVPmT2TU" role="button" tabindex="0" aria-label="Play: Your Latest Featured Work" onkeydown="if(event.key==='Enter')openModal(this)">
           <div class="vthumb">
-            <img src="[4]THUMBNAIL_URL" alt="..." loading="lazy" />
-            ...
-            <span class="vdur">[5]DURATION</span>
+            <img src="https://img.youtube.com/vi/giwSVPmT2TU/maxresdefault.jpg" alt="Featured cinematic video thumbnail" loading="lazy" />
+            <div class="vscrim" aria-hidden="true"></div>
+            <div class="play-btn" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
           </div>
           <div class="vinfo">
-            <span class="vtag [6]TAG_CLASS">[CATEGORY LABEL]</span>
-            <h3 class="vtitle">YOUR VIDEO TITLE</h3>
-            <p class="vmeta">YEAR</p>
+            <div class="vinfo-top">
+              <span class="vtag">Cinematic</span>
+              <span class="vdur">Featured</span>
+            </div>
+            <h3 class="vtitle">Your Latest Featured Work</h3>
+            <p class="vmeta">2024 &middot; Add a brief description here</p>
           </div>
-        </div>
+        </article>
 
-        [1] LAYOUT CLASS — pick one:
-            v-feat  = wide card (spans 8/12 cols) — use for your best video
-            v-tall  = tall card (spans 4 cols, 2 rows) — always pair with a v-feat
-            v-half  = half-width (6 cols)
-            v-third = one-third width (4 cols)
-
-        [2] CATEGORY — controls the filter tabs:
-            "tech"  |  "cinematic"  |  "creative"
-
-        [3] VIDEO URL — your YouTube embed link:
-            Format: https://www.youtube.com/embed/VIDEO_ID
-            Find VIDEO_ID in: youtube.com/watch?v=VIDEO_ID
-
-        [4] THUMBNAIL URL — two options:
-            Option A (recommended): Upload a JPG to your repo then use:
-                                    src="thumbnails/my-video.jpg"
-            Option B (automatic):   https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg
-
-        [5] DURATION — e.g. "2:30"
-
-        [6] TAG CLASS — matches the category colour:
-            tag-t = Tech (slate blue)
-            tag-c = Cinematic (gold)
-            tag-r = Creative (rose)
-
-        To ADD a new card: copy any card block, paste inside .video-grid,
-        update the 6 things above, and bump the vcount number up by 1.
-        To REMOVE a card: delete its entire block and bump vcount down by 1.
-        ════════════════════════════════════════════════════
-      -->
-
-      <div class="video-grid" id="vgrid">
-
-        <!-- CARD 1 — Featured wide -->
-        <div class="vcard v-feat" data-cat="tech" data-video="https://www.youtube.com/embed/giwSVPmT2TU">
+        <!-- Card 2 -->
+        <article class="vcard v-half reveal" data-cat="cinematic" data-video="https://www.youtube.com/embed/RtSsmuZ2Z78" role="button" tabindex="0" aria-label="Play: Three Students, Three Perspectives" onkeydown="if(event.key==='Enter')openModal(this)">
           <div class="vthumb">
-            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&q=80" alt="Tech promo" loading="lazy" />
-            <div class="vthumb-scrim"></div>
-            <div class="play"><div class="play-ring"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-            <span class="vdur">0:27</span>
+            <img src="https://img.youtube.com/vi/RtSsmuZ2Z78/maxresdefault.jpg" alt="Three Students, Three Perspectives — Saint Leo University documentary" loading="lazy" />
+            <div class="vscrim" aria-hidden="true"></div>
+            <div class="play-btn" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
           </div>
           <div class="vinfo">
-            <span class="vtag tag-t">Tech</span>
-            <h3 class="vtitle">Lenovo Laptop Cinematic Promo | Productivity On The Go</h3>
-            <p class="vmeta">2026 · Featured Work</p>
+            <div class="vinfo-top">
+              <span class="vtag">Cinematic</span>
+              <span class="vdur">7:34</span>
+            </div>
+            <h3 class="vtitle">Three Students, Three Perspectives</h3>
+            <p class="vmeta">Saint Leo University &middot; 2024</p>
           </div>
-        </div>
+        </article>
 
-        <!-- CARD 2 — Tall sidebar (pairs with cards 3+4) -->
-        <div class="vcard v-tall" data-cat="cinematic" data-video="https://www.youtube.com/embed/RtSsmuZ2Z78">
+        <!-- Card 3 -->
+        <article class="vcard v-half reveal" data-cat="creative" data-video="https://www.youtube.com/embed/eg556imFXnk" role="button" tabindex="0" aria-label="Play: Dear Younger Me" onkeydown="if(event.key==='Enter')openModal(this)">
           <div class="vthumb">
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=700&q=80" alt="Cinematic" loading="lazy" />
-            <div class="vthumb-scrim"></div>
-            <div class="play"><div class="play-ring"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-            <span class="vdur">3:43</span>
+            <img src="https://img.youtube.com/vi/eg556imFXnk/maxresdefault.jpg" alt="Dear Younger Me — creative short film" loading="lazy" />
+            <div class="vscrim" aria-hidden="true"></div>
+            <div class="play-btn" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
           </div>
           <div class="vinfo">
-            <span class="vtag tag-c">Cinematic</span>
-            <h3 class="vtitle">Three Students, Three Perspectives | What We Learned This Semester at Saint Leo University</h3>
-            <p class="vmeta">2025</p>
-          </div>
-        </div>
-
-        <!-- CARD 3 — Half width -->
-        <div class="vcard v-half" data-cat="tech" data-video="https://www.youtube.com/embed/WhJqPVMtkYg">
-          <div class="vthumb">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FS%2Faplus-media-library-service-media%2F71d66326-8e6e-4821-b385-87c0562d0b56.__CR0%2C0%2C1464%2C600_PT0_SX1464_V1___.jpg&f=1&nofb=1&ipt=ea8c51965893fdaaca5b24414e243e3ad6a3e4aeae4c54121174cc4504798f8e" alt="Tech" loading="lazy" />
-            <div class="vthumb-scrim"></div>
-            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-            <span class="vdur">0:36</span>
-          </div>
-          <div class="vinfo">
-            <span class="vtag tag-t">Tech</span>
-            <h3 class="vtitle">Womier Keyboard | RGB Mechanical Keyboard Showcase</h3>
-            <p class="vmeta">2026</p>
-          </div>
-        </div>
-
-        <!-- CARD 4 — Half width -->
-        <div class="vcard v-half" data-cat="creative" data-video="https://www.youtube.com/embed/eg556imFXnk">
-          <div class="vthumb">
-            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80" alt="Creative" loading="lazy" />
-            <div class="vthumb-scrim"></div>
-            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-            <span class="vdur">2:45</span>
-          </div>
-          <div class="vinfo">
-            <span class="vtag tag-r">Creative</span>
+            <div class="vinfo-top">
+              <span class="vtag">Creative</span>
+              <span class="vdur">4:18</span>
+            </div>
             <h3 class="vtitle">Dear Younger Me</h3>
-            <p class="vmeta">2026</p>
+            <p class="vmeta">Short film &middot; 2023</p>
           </div>
-        </div>
+        </article>
 
-        <!-- CARD 5 — One third -->
-        <div class="vcard v-third" data-cat="tech" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+        <!-- Card 4 — placeholder -->
+        <article class="vcard v-third reveal" data-cat="tech" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID" role="button" tabindex="0" aria-label="Tech promo coming soon" onkeydown="if(event.key==='Enter')openModal(this)">
           <div class="vthumb">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fcoming-soon-text-sign_317810-4929.jpg%3Fw%3D2000&f=1&nofb=1&ipt=839f4b9cdaaaf3a84ff5ea3d308c6fadc161eaab4550656baad453f8596537cd" alt="Tech" loading="lazy" />
-            <div class="vthumb-scrim"></div>
-            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-            <span class="vdur">1:55</span>
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&q=80" alt="Tech promo placeholder" loading="lazy" />
+            <div class="vscrim" aria-hidden="true"></div>
+            <div class="play-btn" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
           </div>
           <div class="vinfo">
-            <span class="vtag tag-t">Tech</span>
-            <h3 class="vtitle">Videos Soon to Come...</h3>
-            <p class="vmeta">2024</p>
+            <div class="vinfo-top">
+              <span class="vtag">Tech</span>
+              <span class="vdur">—</span>
+            </div>
+            <h3 class="vtitle">Tech Promo</h3>
+            <p class="vmeta">Coming soon &middot; 2024</p>
           </div>
-        </div>
+        </article>
 
-        <!-- CARD 6 — One third -->
-        <div class="vcard v-third" data-cat="cinematic" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+        <!-- Card 5 — placeholder -->
+        <article class="vcard v-third reveal" data-cat="cinematic" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" role="button" tabindex="0" aria-label="Cinematic work coming soon" onkeydown="if(event.key==='Enter')openModal(this)">
           <div class="vthumb">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fcoming-soon-text-sign_317810-4929.jpg%3Fw%3D2000&f=1&nofb=1&ipt=839f4b9cdaaaf3a84ff5ea3d308c6fadc161eaab4550656baad453f8596537cd" alt="Cinematic" loading="lazy" />
-            <div class="vthumb-scrim"></div>
-            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-            <span class="vdur">6:12</span>
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80" alt="Cinematic placeholder" loading="lazy" />
+            <div class="vscrim" aria-hidden="true"></div>
+            <div class="play-btn" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
           </div>
           <div class="vinfo">
-            <span class="vtag tag-c">Cinematic</span>
-            <h3 class="vtitle">Videos Soon to Come...</h3>
-            <p class="vmeta">2023</p>
+            <div class="vinfo-top">
+              <span class="vtag">Cinematic</span>
+              <span class="vdur">—</span>
+            </div>
+            <h3 class="vtitle">Cinematic Work</h3>
+            <p class="vmeta">Coming soon &middot; 2024</p>
           </div>
-        </div>
+        </article>
 
-        <!-- CARD 7 — One third -->
-        <div class="vcard v-third" data-cat="creative" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE">
+        <!-- Card 6 — placeholder -->
+        <article class="vcard v-third reveal" data-cat="creative" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" role="button" tabindex="0" aria-label="Creative project coming soon" onkeydown="if(event.key==='Enter')openModal(this)">
           <div class="vthumb">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fcoming-soon-text-sign_317810-4929.jpg%3Fw%3D2000&f=1&nofb=1&ipt=839f4b9cdaaaf3a84ff5ea3d308c6fadc161eaab4550656baad453f8596537cd" alt="Creative" loading="lazy" />
-            <div class="vthumb-scrim"></div>
-            <div class="play"><div class="play-ring"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-            <span class="vdur">3:20</span>
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=700&q=80" alt="Creative project placeholder" loading="lazy" />
+            <div class="vscrim" aria-hidden="true"></div>
+            <div class="play-btn" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
           </div>
           <div class="vinfo">
-            <span class="vtag tag-r">Creative</span>
-            <h3 class="vtitle">Videos Soon to Come...</h3>
-            <p class="vmeta">2023</p>
+            <div class="vinfo-top">
+              <span class="vtag">Creative</span>
+              <span class="vdur">—</span>
+            </div>
+            <h3 class="vtitle">Creative Project</h3>
+            <p class="vmeta">Coming soon &middot; 2024</p>
           </div>
-        </div>
+        </article>
 
+      </div><!-- /video-grid -->
+    </section>
+
+    <!-- About -->
+    <section class="about-section vid-about" id="video-about" aria-label="About Stephaun Martin">
+      <div class="about-photo-frame reveal">
+        <img src="stephy.png" alt="Stephaun Martin, videographer and photographer based in Florida" loading="lazy" />
+        <span class="about-photo-label vid-label">Videographer</span>
       </div>
-    </div>
-  </div>
-
-
-  <!-- ════════════════════════════════════════
-       SERVICES / WHAT I CREATE
-       CHANGE: Edit titles and descriptions
-       ════════════════════════════════════════ -->
-  <div class="services">
-    <div class="services-inner">
-      <div>
-        <h2 class="services-head">What I<br><em>Create</em></h2>
-      </div>
-      <div class="services-grid">
-
-        <div class="svc">
-          <lottie-player class="svc-lottie"
-            src="https://assets4.lottiefiles.com/packages/lf20_qp1q7mct.json"
-            background="transparent" speed="0.7" loop autoplay>
-          </lottie-player>
-          <p class="svc-num">01</p>
-          <p class="svc-title">Tech Promos</p>
-          <p class="svc-desc">Cinematic product videos that blend precision visuals with compelling narrative for tech brands.</p>
-        </div>
-
-        <div class="svc">
-          <lottie-player class="svc-lottie"
-            src="https://assets3.lottiefiles.com/packages/lf20_jtbfg2nb.json"
-            background="transparent" speed="0.7" loop autoplay>
-          </lottie-player>
-          <p class="svc-num">02</p>
-          <p class="svc-title">Cinematic Work</p>
-          <p class="svc-desc">Short films, reels, and atmospheric sequences that prioritise mood and visual craft.</p>
-        </div>
-
-        <div class="svc">
-          <lottie-player class="svc-lottie"
-            src="https://assets9.lottiefiles.com/packages/lf20_xyadoh9h.json"
-            background="transparent" speed="0.7" loop autoplay>
-          </lottie-player>
-          <p class="svc-num">03</p>
-          <p class="svc-title">Creative Projects</p>
-          <p class="svc-desc">Personal and collaborative work that pushes outside commercial briefs into pure expression.</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ════════════════════════════════════════
-       ABOUT
-       ════════════════════════════════════════ -->
-  <div id="about">
-    <div class="about">
-
-      <div class="about-img-wrap">
-        <div class="about-img-frame">
-          <!-- CHANGE: Upload your photo to the repo and update src.
-               e.g. src="images/me.jpg" -->
-          <img src="Images/stephy.png"
-               alt="Stephy Jeffy" loading="lazy" />
-        </div>
-      </div>
-
-      <div>
-        <p class="about-overline">About</p>
-        <!-- CHANGE: Your name -->
-        <h2 class="about-h2">Stephaun <em>Martin</em></h2>
-        <!-- CHANGE: Your bio -->
+      <div class="about-content">
+        <p class="section-eyebrow vid-eye">About</p>
+        <h2 class="about-h2">Stephaun<br><em class="vid-em">Martin</em></h2>
         <div class="about-body">
-          <p>A video creator working at the intersection of technology and visual storytelling. I produce cinematic tech promotional content alongside personal creative projects — each piece built with a clear point of view.</p>
+          <p>A video creator working at the intersection of technology and visual storytelling. I produce cinematic tech promotional content alongside personal creative projects — each piece built with a clear point of view and genuine craft.</p>
           <p>From product launches to short films, every project is an opportunity to push the frame further. Open to collaborations, commissions, and interesting briefs.</p>
         </div>
-        <!-- CHANGE: Edit or add/remove skill tags -->
-        <div class="about-skills">
-          <span class="skill">Tech Promos</span>
-          <span class="skill">Cinematography</span>
-          <span class="skill">Color Grading</span>
-          <span class="skill">Motion Design</span>
-          <span class="skill">Creative Direction</span>
-          <span class="skill">Post-Production</span>
+        <div class="skill-tags vid-skills">
+          <span class="skill-tag">Tech Promos</span>
+          <span class="skill-tag">Cinematography</span>
+          <span class="skill-tag">Color Grading</span>
+          <span class="skill-tag">Motion Design</span>
+          <span class="skill-tag">Creative Direction</span>
+          <span class="skill-tag">Post-Production</span>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-
-
-  <!-- ════════════════════════════════════════
-       CONTACT
-       CHANGE: Your email, YouTube, Instagram
-       ════════════════════════════════════════ -->
-  <div id="contact" class="contact">
-    <div class="contact-inner">
-      <div>
-        <h2 class="contact-h2">Let's make<br><em>something great</em></h2>
-        <p class="contact-sub">Have a project in mind or just want to say hello? Reach out through any of the channels below.</p>
+    <!-- Contact -->
+    <section class="contact-section" id="video-contact" aria-label="Book a video project">
+      <div class="contact-inner vid-contact">
+        <div>
+          <h2 class="contact-h2">Let's make<br><em class="vid-em">something great</em></h2>
+          <p class="contact-sub">Have a project in mind — a promo, a film, a collaboration? Reach out and let's build it together.</p>
+          <a href="mailto:martinstephaun01@gmail.com" class="booking-cta vid-cta">
+            Send an inquiry
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="contact-links vid-contact" aria-label="Contact links">
+          <a href="mailto:martinstephaun01@gmail.com" class="ci">
+            <div class="ci-left">
+              <span class="ci-label">Email</span>
+              <span class="ci-value">martinstephaun01@gmail.com</span>
+            </div>
+            <div class="ci-arrow" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@Stephy_Production" target="_blank" rel="noopener" class="ci">
+            <div class="ci-left">
+              <span class="ci-label">YouTube</span>
+              <span class="ci-value">@Stephy_Production</span>
+            </div>
+            <div class="ci-arrow" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </a>
+          <a href="https://instagram.com/stephyjeffy" target="_blank" rel="noopener" class="ci">
+            <div class="ci-left">
+              <span class="ci-label">Instagram</span>
+              <span class="ci-value">@stephyjeffy</span>
+            </div>
+            <div class="ci-arrow" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </a>
+        </div>
       </div>
-      <div class="contact-right">
+    </section>
 
-        <!-- CHANGE: your@email.com in both href and ci-value -->
-        <a href="mailto:your@email.com" class="contact-item">
-          <div>
-            <span class="ci-label">Email</span>
-            <span class="ci-value">martinstephaun01@gmail.com</span>
-          </div>
-          <div class="ci-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </div>
-        </a>
+    <footer class="site-footer">
+      <span class="footer-name">Stephaun Martin</span>
+      <span>&copy; 2026 &middot; All rights reserved</span>
+    </footer>
 
-        <!-- CHANGE: your YouTube channel URL and handle -->
-        <a href="https://www.youtube.com/@Stephy_Production" target="_blank" class="contact-item">
-          <div>
-            <span class="ci-label">YouTube</span>
-            <span class="ci-value">@Stephy_Production</span>
-          </div>
-          <div class="ci-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </div>
-        </a>
-
-        <!-- CHANGE: your Instagram URL and handle -->
-        <a href="https://instagram.com/stephyjeffy" target="_blank" class="contact-item">
-          <div>
-            <span class="ci-label">Instagram</span>
-            <span class="ci-value">@stephyjeffy</span>
-          </div>
-          <div class="ci-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </div>
+  </div><!-- /video-page -->
 
 
-  <!-- ════════════════════════════════════════
-       FOOTER — CHANGE: name and year
-       ════════════════════════════════════════ -->
-  <footer>
-    <span class="footer-logo">
-      <span class="footer-gem"></span>
-      Stephaun Martin
-    </span>
-    <span>&copy; 2025 &middot; All rights reserved</span>
-  </footer>
-
-
-  <!-- Modal video player — do not edit -->
-  <div class="modal" id="modal" onclick="closeModal(event)">
+  <!-- Video Modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player" onclick="closeModal(event)">
     <div class="modal-box">
-      <button class="modal-x" onclick="closeModal()">&#x2715;</button>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close video">&#x2715;</button>
       <div class="modal-frame">
-        <iframe id="mframe" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe id="mframe" allow="autoplay; fullscreen" allowfullscreen title="Video player"></iframe>
       </div>
     </div>
   </div>
 
-  <!-- Your JavaScript file -->
-  <script src="main.js"></script>
+  <!-- Photo Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo">&#x2715;</button>
+    <button class="lightbox-prev" id="lb-prev" onclick="lightboxNav(-1)" aria-label="Previous photo">&#8249;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <button class="lightbox-next" id="lb-next" onclick="lightboxNav(1)" aria-label="Next photo">&#8250;</button>
+    <p class="lightbox-counter" id="lb-counter" aria-live="polite"></p>
+  </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
