@@ -71,16 +71,6 @@ function goHome() {
   currentPage = 'landing';
 }
 
-document.querySelectorAll('.photo-item').forEach(item => {
-  const show = filter === 'all' || item.dataset.cat === filter;
-  item.classList.toggle('hidden', !show);
-  if (show) count++;
-});
-
-document.getElementById('photo-grid').style.display = 'none';
-document.getElementById('photo-grid').offsetHeight;
-document.getElementById('photo-grid').style.display = 'grid';
-
 function showPhoto() {
   if (currentPage === 'photo') return;
 
@@ -238,8 +228,13 @@ document.addEventListener('click', function (e) {
   const btn = e.target.closest('.sidebar-link');
   if (!btn) return;
 
-  document.querySelectorAll('.sidebar-link').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.sidebar-link')
+  .forEach(b => b.classList.remove('active'));
+
   btn.classList.add('active');
+
+  const filter = btn.dataset.filter;
+  let count = 0;
 
   const filter = btn.dataset.filter;
   let count = 0;
@@ -249,6 +244,10 @@ document.addEventListener('click', function (e) {
     item.classList.toggle('hidden', !show);
     if (show) count++;
   });
+ const grid = document.getElementById('photo-grid');
+ grid.style.display = 'none';
+ grid.offsetHeight;
+ grid.style.display = 'grid';
 
   if (photoCountEl) {
     photoCountEl.textContent = count + ' photo' + (count !== 1 ? 's' : '');
