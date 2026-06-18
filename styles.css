@@ -542,6 +542,10 @@ body {
   background: var(--black);
 }
 
+.photo-grid:has(.photo-item.hidden) {
+  grid-auto-flow: dense;
+}
+
 .photo-item {
   position: relative;
   overflow: hidden;
