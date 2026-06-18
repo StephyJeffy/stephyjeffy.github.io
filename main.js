@@ -236,18 +236,16 @@ document.addEventListener('click', function (e) {
   const filter = btn.dataset.filter;
   let count = 0;
 
-  const filter = btn.dataset.filter;
-  let count = 0;
-
   document.querySelectorAll('.photo-item').forEach(item => {
-    const show = filter === 'all' || item.dataset.cat === filter;
-    item.classList.toggle('hidden', !show);
-    if (show) count++;
+   const show = filter === 'all' || item.dataset.cat === filter;
+   item.classList.toggle('hidden', !show);
+   if (show) count++;
   });
- const grid = document.getElementById('photo-grid');
- grid.style.display = 'none';
- grid.offsetHeight;
- grid.style.display = 'grid';
+
+  const grid = document.getElementById('photo-grid');
+  grid.style.display = 'none';
+  grid.offsetHeight;
+  grid.style.display = 'grid';
 
   if (photoCountEl) {
     photoCountEl.textContent = count + ' photo' + (count !== 1 ? 's' : '');
