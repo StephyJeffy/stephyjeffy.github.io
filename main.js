@@ -71,6 +71,16 @@ function goHome() {
   currentPage = 'landing';
 }
 
+document.querySelectorAll('.photo-item').forEach(item => {
+  const show = filter === 'all' || item.dataset.cat === filter;
+  item.classList.toggle('hidden', !show);
+  if (show) count++;
+});
+
+document.getElementById('photo-grid').style.display = 'none';
+document.getElementById('photo-grid').offsetHeight;
+document.getElementById('photo-grid').style.display = 'grid';
+
 function showPhoto() {
   if (currentPage === 'photo') return;
 
