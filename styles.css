@@ -550,6 +550,9 @@ body {
   aspect-ratio: 1;
 }
 
+.photo-item.hidden {
+  display: none;
+}
 /* Some items span 2 to break up monotony */
 .photo-item:nth-child(3n+1) { grid-column: span 2; aspect-ratio: auto; }
 .photo-item:nth-child(7n+1) { grid-column: span 3; }
