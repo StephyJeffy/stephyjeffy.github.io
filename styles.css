@@ -565,8 +565,9 @@ body {
 /* Some items span 2 to break up monotony */
 .photo-item:nth-child(6n+1),
 .photo-item:nth-child(6n+4) {
-  grid-column: span 1;
+  grid-column: span 2;
   grid-row: span 1;
+  aspect-ratio: 3 / 2;
 }
 .photo-item img {
   width: 100%;
