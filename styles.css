@@ -533,12 +533,15 @@ body {
   padding-top: 60px; /* space for nav */
 }
 
-/* ── Masonry photo grid (like reference) ── */
+/* ── Masonry photo grid (grid-based, filter-safe) ── */
 .photo-grid {
-  column-count: 4;
-  column-gap: 6px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 10px;
+  gap: 6px;
   padding: 6px;
   background: var(--black);
+  grid-auto-flow: dense;
 }
 
 .photo-item {
@@ -546,11 +549,13 @@ body {
   overflow: hidden;
   background: var(--surface);
   cursor: zoom-in;
-  break-inside: avoid;
-  margin-bottom: 6px;
-  display: block;
-  width: 100%;
+  grid-row: span 30;
 }
+
+/* Varied heights for masonry feel */
+.photo-item:nth-child(3n+1) { grid-row: span 34; }
+.photo-item:nth-child(4n+2) { grid-row: span 24; }
+.photo-item:nth-child(5n+3) { grid-row: span 40; }
 
 .photo-item.hidden {
   display: none;
@@ -558,7 +563,7 @@ body {
 
 .photo-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -1318,7 +1323,7 @@ body {
 
   /* Photo grid on mobile — 2 cols */
   .photo-grid {
-    column-count: 2;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Video grid */
