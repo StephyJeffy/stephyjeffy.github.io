@@ -543,12 +543,7 @@ body {
   grid-auto-flow: dense;
 }
 
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  padding: 4px;
-  background: var(--black);
+.photo-grid:has(.photo-item.hidden) {
   grid-auto-flow: dense;
 }
 
@@ -557,18 +552,11 @@ body {
   overflow: hidden;
   background: var(--surface);
   cursor: zoom-in;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
 }
 
 .photo-item.hidden {
   display: none;
-}
-
-/* Smaller hero tiles */
-.photo-item:nth-child(6n+1),
-.photo-item:nth-child(6n+4) {
-  grid-column: span 2;
-  aspect-ratio: 4 / 3;
 }
 
 .photo-item img {
@@ -580,7 +568,6 @@ body {
   transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease;
   filter: brightness(0.88);
 }
-
 .photo-item:hover img {
   transform: scale(1.06);
   filter: brightness(1);
@@ -1336,8 +1323,7 @@ body {
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .photo-item:nth-child(n) { grid-column: span 1; aspect-ratio: 1; }
-  .photo-item:nth-child(3n+1) { grid-column: span 2; }
+  .photo-item { aspect-ratio: 1; }
 
   /* Video grid */
   .v-half, .v-third { grid-column: span 12; }
