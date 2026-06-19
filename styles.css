@@ -543,7 +543,12 @@ body {
   grid-auto-flow: dense;
 }
 
-.photo-grid:has(.photo-item.hidden) {
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 4px;
+  background: var(--black);
   grid-auto-flow: dense;
 }
 
@@ -552,29 +557,20 @@ body {
   overflow: hidden;
   background: var(--surface);
   cursor: zoom-in;
-  aspect-ratio: 1;
-}
-
-.photo-item {
   aspect-ratio: 4 / 5;
 }
 
 .photo-item.hidden {
   display: none;
 }
-/* Some items span 2 to break up monotony */
+
+/* Smaller hero tiles */
 .photo-item:nth-child(6n+1),
 .photo-item:nth-child(6n+4) {
   grid-column: span 2;
-  grid-row: span 1;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
 }
 
-.photo-item:nth-child(6n+1) img,
-.photo-item:nth-child(6n+4) img {
-  object-fit: contain;
-  background: #000;
-}
 .photo-item img {
   width: 100%;
   height: 100%;
@@ -583,12 +579,8 @@ body {
   display: block;
   transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease;
   filter: brightness(0.88);
-  .photo-item:nth-child(6n+1) img,
-  .photo-item:nth-child(6n+4) img {
-    object-fit: cover;
-    object-position: center 35%;
 }
-}
+
 .photo-item:hover img {
   transform: scale(1.06);
   filter: brightness(1);
