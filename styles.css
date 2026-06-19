@@ -533,18 +533,12 @@ body {
   padding-top: 60px; /* space for nav */
 }
 
-/* ── Tight photo grid (like reference) ── */
+/* ── Masonry photo grid (like reference) ── */
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  padding: 4px;
+  column-count: 4;
+  column-gap: 6px;
+  padding: 6px;
   background: var(--black);
-  grid-auto-flow: dense;
-}
-
-.photo-grid:has(.photo-item.hidden) {
-  grid-auto-flow: dense;
 }
 
 .photo-item {
@@ -552,7 +546,10 @@ body {
   overflow: hidden;
   background: var(--surface);
   cursor: zoom-in;
-  aspect-ratio: 1;
+  break-inside: avoid;
+  margin-bottom: 6px;
+  display: block;
+  width: 100%;
 }
 
 .photo-item.hidden {
@@ -561,7 +558,7 @@ body {
 
 .photo-item img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -1321,9 +1318,8 @@ body {
 
   /* Photo grid on mobile — 2 cols */
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
-  .photo-item { aspect-ratio: 1; }
 
   /* Video grid */
   .v-half, .v-third { grid-column: span 12; }
