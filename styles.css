@@ -567,7 +567,13 @@ body {
 .photo-item:nth-child(6n+4) {
   grid-column: span 2;
   grid-row: span 1;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
+}
+
+.photo-item:nth-child(6n+1) img,
+.photo-item:nth-child(6n+4) img {
+  object-fit: contain;
+  background: #000;
 }
 .photo-item img {
   width: 100%;
