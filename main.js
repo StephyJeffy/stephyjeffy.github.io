@@ -343,3 +343,19 @@ function initReveal() {
    INIT
    ============================================================ */
 buildLightboxItems();
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  if (currentPage === 'landing') return;
+
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY < lastScrollY || currentScrollY < 80) {
+    showNav();
+  } else if (currentScrollY > lastScrollY && currentScrollY > 120) {
+    hideNav();
+  }
+
+  lastScrollY = currentScrollY;
+});
