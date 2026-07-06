@@ -1355,15 +1355,17 @@ body {
 
   /* Photo grid on small phones — 1 col */
   .photo-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding: 6px;
   }
+
   .photo-item,
   .photo-item:nth-child(3n+1),
   .photo-item:nth-child(4n+2),
   .photo-item:nth-child(5n+3) {
-    grid-row: span 60;
+    grid-row: span 32;
   }
-}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
