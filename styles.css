@@ -1335,8 +1335,9 @@ body {
 
   /* Photo grid on tablets — 2 cols */
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
 
   /* Video grid */
   .v-half, .v-third { grid-column: span 12; }
@@ -1356,15 +1357,14 @@ body {
   /* Photo grid on small phones — 1 col */
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    padding: 6px;
-  }
+    gap: 5px;
+}
 
   .photo-item,
   .photo-item:nth-child(3n+1),
   .photo-item:nth-child(4n+2),
   .photo-item:nth-child(5n+3) {
-    grid-row: span 32;
+    grid-row: span 28;
   }
 
 /* Reduced motion */
