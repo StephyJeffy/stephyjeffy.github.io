@@ -25,6 +25,9 @@ const lbCounter    = document.getElementById('lb-counter');
 const menuBtn      = document.getElementById('nav-menu-btn');
 const drawer       = document.getElementById('mobile-drawer');
 const drawerClose  = document.getElementById('mobile-drawer-close');
+const navHoverZone = document.getElementById('nav-hover-zone');
+const mobilePhotoBtn = document.getElementById('mobile-photo-btn');
+const mobileVideoBtn = document.getElementById('mobile-video-btn');
 const vcountEl     = document.getElementById('vcount');
 const photoCountEl = document.getElementById('photo-count');
 
@@ -43,6 +46,8 @@ function hideNav() {
 function updateNavMode(mode) {
   photoBtn.className = 'mode-btn' + (mode === 'photo' ? ' active-photo' : '');
   videoBtn.className = 'mode-btn' + (mode === 'video' ? ' active-video' : '');
+  if (mobilePhotoBtn) mobilePhotoBtn.className = mode === 'photo' ? 'active-photo' : '';
+  if (mobileVideoBtn) mobileVideoBtn.className = mode === 'video' ? 'active-video' : '';
 }
 
 
@@ -105,6 +110,7 @@ function _transitionTo(targetPage, fromLanding) {
       requestAnimationFrame(() => {
         targetPage.classList.add('visible');
         showNav();
+        if (!isTouchNav()) setTimeout(hideNav, 900);
         initReveal();
         buildLightboxItems();
       });
@@ -227,35 +233,44 @@ function _showLightboxFrame() {
 
 /* ============================================================
    PHOTO FILTER (SIDEBAR)
+   "All Work" is a curated 25-photo selection. Category filters still
+   show every image in that category, including supporting work.
    ============================================================ */
-document.addEventListener('click', function (e) {
-  const btn = e.target.closest('.sidebar-link');
-  if (!btn) return;
-
-  document.querySelectorAll('.sidebar-link')
-  .forEach(b => b.classList.remove('active'));
-
-  btn.classList.add('active');
-
-  const filter = btn.dataset.filter;
+function applyPhotoFilter(filter) {
   let count = 0;
 
   document.querySelectorAll('.photo-item').forEach(item => {
-   const show = filter === 'all' || item.dataset.cat === filter;
-   item.classList.toggle('hidden', !show);
-   if (show) count++;
+    const show = filter === 'all'
+      ? item.dataset.featured === 'true'
+      : item.dataset.cat === filter;
+
+    item.classList.toggle('hidden', !show);
+    if (show) count++;
   });
 
   const grid = document.getElementById('photo-grid');
-  grid.style.display = 'none';
-  grid.offsetHeight;
-  grid.style.display = 'grid';
+  if (grid) {
+    grid.style.display = 'none';
+    grid.offsetHeight;
+    grid.style.display = 'grid';
+  }
 
   if (photoCountEl) {
     photoCountEl.textContent = count + ' photo' + (count !== 1 ? 's' : '');
   }
 
   buildLightboxItems();
+}
+
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest('.sidebar-link');
+  if (!btn) return;
+
+  document.querySelectorAll('.sidebar-link')
+    .forEach(b => b.classList.remove('active'));
+
+  btn.classList.add('active');
+  applyPhotoFilter(btn.dataset.filter);
 });
 
 
@@ -289,18 +304,25 @@ document.addEventListener('click', function (e) {
    ============================================================ */
 function openMobileMenu() {
   drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
   if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
 }
 
 function closeMobileMenu() {
   drawer.classList.remove('open');
+  drawer.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
   if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
 }
 
 if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
 if (drawerClose) drawerClose.addEventListener('click', closeMobileMenu);
+if (drawer) {
+  drawer.addEventListener('click', function (e) {
+    if (e.target === drawer) closeMobileMenu();
+  });
+}
 
 
 /* ============================================================
@@ -342,20 +364,41 @@ function initReveal() {
 /* ============================================================
    INIT
    ============================================================ */
-buildLightboxItems();
+applyPhotoFilter('all');
 
-let lastScrollY = window.scrollY;
+const isTouchNav = () => window.matchMedia('(max-width: 768px)').matches;
 
-window.addEventListener('scroll', () => {
+function syncNavForViewport() {
   if (currentPage === 'landing') return;
+  if (isTouchNav()) showNav();
+  else hideNav();
+}
 
-  const currentScrollY = window.scrollY;
+// Desktop: keep the top navigation out of the way until the cursor reaches
+// the very top edge. It remains open while the user is interacting with it.
+if (navHoverZone) {
+  navHoverZone.addEventListener('mouseenter', () => {
+    if (currentPage !== 'landing' && !isTouchNav()) showNav();
+  });
+}
 
-  if (currentScrollY < lastScrollY || currentScrollY < 80) {
-    showNav();
-  } else if (currentScrollY > lastScrollY && currentScrollY > 120) {
-    hideNav();
-  }
+if (siteNav) {
+  siteNav.addEventListener('mouseleave', () => {
+    if (currentPage !== 'landing' && !isTouchNav()) hideNav();
+  });
+  siteNav.addEventListener('focusin', () => {
+    if (currentPage !== 'landing') showNav();
+  });
+  siteNav.addEventListener('focusout', () => {
+    if (currentPage !== 'landing' && !isTouchNav()) {
+      setTimeout(() => {
+        if (!siteNav.contains(document.activeElement)) hideNav();
+      }, 0);
+    }
+  });
+}
 
-  lastScrollY = currentScrollY;
+window.addEventListener('resize', syncNavForViewport);
+window.addEventListener('scroll', () => {
+  if (currentPage !== 'landing' && isTouchNav()) showNav();
 });
