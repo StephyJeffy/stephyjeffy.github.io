@@ -178,6 +178,8 @@ function closeModal(e) {
 
 // Delegate click on video cards
 document.addEventListener('click', function (e) {
+  // Let external YouTube links navigate instead of opening the modal.
+  if (e.target.closest('a[href]')) return;
   const card = e.target.closest('.vcard[data-video]');
   if (card) openModal(card);
 });
@@ -295,7 +297,7 @@ document.addEventListener('click', function (e) {
   document.querySelectorAll('.vcard').forEach(card => {
     const show = filter === 'all' || card.dataset.cat === filter;
     card.classList.toggle('hidden', !show);
-    if (show) count++;
+    if (show && card.dataset.video) count++;
   });
 
   if (vcountEl) {
@@ -407,3 +409,41 @@ window.addEventListener('resize', syncNavForViewport);
 window.addEventListener('scroll', () => {
   if (currentPage !== 'landing' && isTouchNav()) showNav();
 });
+
+/* ── Newly added YouTube portfolio video metadata ──
+   The title is refreshed from YouTube's public oEmbed response if available.
+   A neutral fallback is retained for unavailable or non-embeddable videos. */
+(function hydrateNewVideoTitle() {
+  const card = document.getElementById('video-tqry');
+  if (!card || typeof fetch !== 'function') return;
+  const watchURL = 'https://www.youtube.com/watch?v=-TQRYiD5jhk';
+  const oembedURL = 'https://www.youtube.com/oembed?url=' + encodeURIComponent(watchURL) + '&format=json';
+  fetch(oembedURL, { mode: 'cors' })
+    .then(response => { if (!response.ok) throw new Error('Video metadata unavailable'); return response.json(); })
+    .then(data => {
+      if (typeof data.title !== 'string' || !data.title.trim()) return;
+      const title = data.title.trim();
+      const heading = card.querySelector('.vtitle');
+      const image = card.querySelector('.vthumb img');
+      if (heading) heading.textContent = title;
+      if (image) image.alt = title + ' — YouTube thumbnail';
+      card.setAttribute('aria-label', 'Play: ' + title);
+    })
+    .catch(() => { /* Keep neutral fallback if network or oEmbed is unavailable. */ });
+})();
+
+/* Hydrate archive-film title without inventing metadata when public oEmbed is inaccessible. */
+(function hydrateArchiveVideoTitle() {
+  const card = document.getElementById('video-archive-project');
+  if (!card || typeof fetch !== 'function') return;
+  const url = 'https://www.youtube.com/oembed?url=' + encodeURIComponent('https://www.youtube.com/watch?v=giwSVPmT2TU') + '&format=json';
+  fetch(url, { mode: 'cors' }).then(r => { if (!r.ok) throw new Error('unavailable'); return r.json(); }).then(d => {
+    if (!d || typeof d.title !== 'string' || !d.title.trim()) return;
+    const title = d.title.trim();
+    const heading = card.querySelector('.vtitle');
+    const image = card.querySelector('.vthumb img');
+    if (heading) heading.textContent = title;
+    if (image) image.alt = title + ' — video thumbnail';
+    card.setAttribute('aria-label', 'Play: ' + title);
+  }).catch(() => { /* Fallback: Selected Film */ });
+})();

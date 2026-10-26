@@ -461,153 +461,66 @@
        VIDEOGRAPHY PAGE
   ═══════════════════════════════════════ -->
 <div aria-label="Videography portfolio" class="page" id="video-page">
-<!-- Hero -->
-<header class="video-hero">
-<div class="video-hero-inner">
-<p class="section-eyebrow vid-eye">Videography</p>
-<h1 class="hero-display vid-display">
-          Motion &amp;<br/><em>Intention</em>
-</h1>
-<p class="hero-lead">Cinematic tech promos, short films, and creative work — every frame built with a clear point of view.</p>
-<a class="booking-cta vid-cta" href="#video-work" onclick="document.getElementById('video-work').scrollIntoView({behavior:'smooth'}); return false;">
-          View work
-          <svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="12"><line x1="12" x2="12" y1="5" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-</a>
-</div>
-<div aria-label="Statistics" class="video-hero-stats">
-<div class="vid-stat">
-<span class="vid-stat-n">4+</span>
-<span class="vid-stat-l">Films</span>
-</div>
-<div class="vid-stat">
-<span class="vid-stat-n">3</span>
-<span class="vid-stat-l">Disciplines</span>
-</div>
-<div class="vid-stat">
-<span class="vid-stat-n">2+</span>
-<span class="vid-stat-l">Years</span>
-</div>
-</div>
+<!-- Film hero: selected feature -->
+<header class="film-hero" aria-label="Video portfolio introduction">
+  <div class="film-wrap">
+    <div class="film-hero-bar">
+      <span class="film-overline"><span class="film-dot" aria-hidden="true"></span> STEPHAUN MARTIN <span class="film-overline-separator">/</span> MOTION PICTURE</span>
+      <span class="film-edition">INDEPENDENT FILMS <span aria-hidden="true">—</span> SELECTED WORK</span>
+    </div>
+    <div class="film-hero-main">
+      <div class="film-intro">
+        <p class="film-section-number">VISUAL STORYTELLING <span aria-hidden="true">/</span> 001</p>
+        <h1 class="film-headline">Stories<br/>in <em>motion.</em></h1>
+        <p class="film-intro-description">Films built with feeling, intention and a distinct point of view. From intimate portraits to stories that deserve to be told.</p>
+        <a class="film-outline-cta" href="#video-work" onclick="document.getElementById('video-work').scrollIntoView({behavior:'smooth'}); return false;">
+          Explore the work <span aria-hidden="true">↗</span>
+        </a>
+        <span class="film-intro-side-note">A collection of stories, seen differently.</span>
+      </div>
+      <article class="vcard film-spotlight" id="video-tqry" data-cat="creative" data-video="https://www.youtube.com/embed/-TQRYiD5jhk" role="button" tabindex="0" aria-label="Play: Antoine" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(this)}">
+        <div class="vthumb film-spotlight-thumb">
+          <img alt="Antoine — featured short film" src="https://img.youtube.com/vi/-TQRYiD5jhk/hqdefault.jpg" width="480" height="360" decoding="async" fetchpriority="high" />
+          <div class="film-spotlight-scrim" aria-hidden="true"></div>
+          <span class="film-feature-tag">FEATURED FILM <span aria-hidden="true">/</span> 01</span>
+          <div class="film-feature-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.2 19 12 8 18.8V5.2Z"/></svg></div>
+          <div class="film-feature-titles"><span class="film-feature-type">A CREATIVE PORTRAIT</span><h2 class="vtitle">Antoine</h2><span class="film-feature-hint">WATCH THE FILM <span aria-hidden="true">↗</span></span></div>
+        </div>
+        <div class="film-feature-footer">
+          <span><span class="film-footer-mark">01</span> / FEATURED PROJECT</span>
+          <a href="https://youtu.be/-TQRYiD5jhk" target="_blank" rel="noopener noreferrer" class="film-feature-link">YOUTUBE <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </div>
+    <div class="film-hero-foot">
+      <span>CONCEPT</span><span class="film-foot-plus" aria-hidden="true">+</span><span>CAMERA</span><span class="film-foot-plus" aria-hidden="true">+</span><span>POST-PRODUCTION</span>
+      <span class="film-foot-right">CRAFTED FRAME BY FRAME <span aria-hidden="true">↙</span></span>
+    </div>
+  </div>
 </header>
-<!-- Filter + Grid -->
-<section aria-label="Video work" class="video-section" id="video-work">
-<div aria-label="Filter videos by category" class="video-filter-bar" role="group">
-<button class="filter-btn active" data-filter="all">All</button>
-<button class="filter-btn" data-filter="cinematic">Cinematic</button>
-<button class="filter-btn" data-filter="tech">Tech</button>
-<button class="filter-btn" data-filter="creative">Creative</button>
-<span aria-live="polite" class="vcount" id="vcount">4 videos</span>
-</div>
-<div class="video-grid">
-<!-- Featured card -->
-<article aria-label="Play: Your Latest Featured Work" class="vcard v-feat reveal" data-cat="cinematic" data-video="https://www.youtube.com/embed/giwSVPmT2TU" onkeydown="if(event.key==='Enter')openModal(this)" role="button" tabindex="0">
-<div class="vthumb">
-<img alt="Featured cinematic video thumbnail" decoding="async" height="720" loading="lazy" src="https://img.youtube.com/vi/giwSVPmT2TU/maxresdefault.jpg" width="1280"/>
-<div aria-hidden="true" class="vscrim"></div>
-<div aria-hidden="true" class="play-btn">
-<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-</div>
-</div>
-<div class="vinfo">
-<div class="vinfo-top">
-<span class="vtag">Cinematic</span>
-<span class="vdur">Featured</span>
-</div>
-<h3 class="vtitle">Your Latest Featured Work</h3>
-<p class="vmeta">2024 · Add a brief description here</p>
-</div>
-</article>
-<!-- Card 2 -->
-<article aria-label="Play: Three Students, Three Perspectives" class="vcard v-half reveal" data-cat="cinematic" data-video="https://www.youtube.com/embed/RtSsmuZ2Z78" onkeydown="if(event.key==='Enter')openModal(this)" role="button" tabindex="0">
-<div class="vthumb">
-<img alt="Three Students, Three Perspectives — Saint Leo University documentary" decoding="async" height="720" loading="lazy" src="https://img.youtube.com/vi/RtSsmuZ2Z78/maxresdefault.jpg" width="1280"/>
-<div aria-hidden="true" class="vscrim"></div>
-<div aria-hidden="true" class="play-btn">
-<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-</div>
-</div>
-<div class="vinfo">
-<div class="vinfo-top">
-<span class="vtag">Cinematic</span>
-<span class="vdur">7:34</span>
-</div>
-<h3 class="vtitle">Three Students, Three Perspectives</h3>
-<p class="vmeta">Saint Leo University · 2024</p>
-</div>
-</article>
-<!-- Card 3 -->
-<article aria-label="Play: Dear Younger Me" class="vcard v-half reveal" data-cat="creative" data-video="https://www.youtube.com/embed/eg556imFXnk" onkeydown="if(event.key==='Enter')openModal(this)" role="button" tabindex="0">
-<div class="vthumb">
-<img alt="Dear Younger Me — creative short film" decoding="async" height="720" loading="lazy" src="https://img.youtube.com/vi/eg556imFXnk/maxresdefault.jpg" width="1280"/>
-<div aria-hidden="true" class="vscrim"></div>
-<div aria-hidden="true" class="play-btn">
-<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-</div>
-</div>
-<div class="vinfo">
-<div class="vinfo-top">
-<span class="vtag">Creative</span>
-<span class="vdur">4:18</span>
-</div>
-<h3 class="vtitle">Dear Younger Me</h3>
-<p class="vmeta">Short film · 2023</p>
-</div>
-</article>
-<!-- Card 4 — placeholder -->
-<article aria-label="Tech promo coming soon" class="vcard v-third reveal" data-cat="tech" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID" onkeydown="if(event.key==='Enter')openModal(this)" role="button" tabindex="0">
-<div class="vthumb">
-<img alt="Tech promo placeholder" decoding="async" height="394" loading="lazy" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&amp;q=80" width="700"/>
-<div aria-hidden="true" class="vscrim"></div>
-<div aria-hidden="true" class="play-btn">
-<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-</div>
-</div>
-<div class="vinfo">
-<div class="vinfo-top">
-<span class="vtag">Tech</span>
-<span class="vdur">—</span>
-</div>
-<h3 class="vtitle">Tech Promo</h3>
-<p class="vmeta">Coming soon · 2024</p>
-</div>
-</article>
-<!-- Card 5 — placeholder -->
-<article aria-label="Cinematic work coming soon" class="vcard v-third reveal" data-cat="cinematic" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" onkeydown="if(event.key==='Enter')openModal(this)" role="button" tabindex="0">
-<div class="vthumb">
-<img alt="Cinematic placeholder" decoding="async" height="394" loading="lazy" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&amp;q=80" width="700"/>
-<div aria-hidden="true" class="vscrim"></div>
-<div aria-hidden="true" class="play-btn">
-<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-</div>
-</div>
-<div class="vinfo">
-<div class="vinfo-top">
-<span class="vtag">Cinematic</span>
-<span class="vdur">—</span>
-</div>
-<h3 class="vtitle">Cinematic Work</h3>
-<p class="vmeta">Coming soon · 2024</p>
-</div>
-</article>
-<!-- Card 6 — placeholder -->
-<article aria-label="Creative project coming soon" class="vcard v-third reveal" data-cat="creative" data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" onkeydown="if(event.key==='Enter')openModal(this)" role="button" tabindex="0">
-<div class="vthumb">
-<img alt="Creative project placeholder" decoding="async" height="394" loading="lazy" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=700&amp;q=80" width="700"/>
-<div aria-hidden="true" class="vscrim"></div>
-<div aria-hidden="true" class="play-btn">
-<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-</div>
-</div>
-<div class="vinfo">
-<div class="vinfo-top">
-<span class="vtag">Creative</span>
-<span class="vdur">—</span>
-</div>
-<h3 class="vtitle">Creative Project</h3>
-<p class="vmeta">Coming soon · 2024</p>
-</div>
-</article>
-</div><!-- /video-grid -->
+<!-- Selected film collection -->
+<section class="video-section film-collection" id="video-work" aria-label="Selected videos">
+  <div class="film-wrap">
+    <div class="film-collection-header">
+      <div><p class="film-section-number">002 / THE FILMS</p><h2 class="film-section-title">Selected <em>projects.</em></h2></div>
+      <p class="film-section-desc">A closer look at the stories behind the frame. Select a film to watch.</p>
+    </div>
+    <div class="video-grid film-project-grid">
+      <article class="vcard film-project-card reveal" data-cat="cinematic" data-video="https://www.youtube.com/embed/RtSsmuZ2Z78" role="button" tabindex="0" aria-label="Play: Three Students, Three Perspectives" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(this)}">
+        <div class="vthumb film-card-image"><img src="https://img.youtube.com/vi/RtSsmuZ2Z78/hqdefault.jpg" alt="Three Students, Three Perspectives video thumbnail" loading="lazy" decoding="async" width="480" height="360" /><div class="film-card-shade" aria-hidden="true"></div><span class="film-card-number">02 / 04</span><span class="film-card-play" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.2 19 12 8 18.8V5.2Z"/></svg></span></div>
+        <div class="film-card-details"><span class="film-card-category">DOCUMENTARY · 2024</span><h3 class="vtitle">Three Students,<br/>Three Perspectives</h3><div class="film-card-bottom"><span>SAINT LEO UNIVERSITY</span><span aria-hidden="true">↗</span></div></div>
+      </article>
+      <article class="vcard film-project-card reveal" data-cat="creative" data-video="https://www.youtube.com/embed/eg556imFXnk" role="button" tabindex="0" aria-label="Play: Dear Younger Me" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(this)}">
+        <div class="vthumb film-card-image"><img src="https://img.youtube.com/vi/eg556imFXnk/hqdefault.jpg" alt="Dear Younger Me short film thumbnail" loading="lazy" decoding="async" width="480" height="360" /><div class="film-card-shade" aria-hidden="true"></div><span class="film-card-number">03 / 04</span><span class="film-card-play" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.2 19 12 8 18.8V5.2Z"/></svg></span></div>
+        <div class="film-card-details"><span class="film-card-category">SHORT FILM · 2023</span><h3 class="vtitle">Dear Younger Me</h3><div class="film-card-bottom"><span>CREATIVE STORYTELLING</span><span aria-hidden="true">↗</span></div></div>
+      </article>
+      <article class="vcard film-project-card reveal" id="video-archive-project" data-cat="cinematic" data-video="https://www.youtube.com/embed/giwSVPmT2TU" role="button" tabindex="0" aria-label="Play: Selected Film" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(this)}">
+        <div class="vthumb film-card-image"><img src="https://img.youtube.com/vi/giwSVPmT2TU/hqdefault.jpg" alt="Selected video work thumbnail" loading="lazy" decoding="async" width="480" height="360" /><div class="film-card-shade" aria-hidden="true"></div><span class="film-card-number">04 / 04</span><span class="film-card-play" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.2 19 12 8 18.8V5.2Z"/></svg></span></div>
+        <div class="film-card-details"><span class="film-card-category">FILM PROJECT</span><h3 class="vtitle">Selected Film</h3><div class="film-card-bottom"><span>VIEW THE PROJECT</span><span aria-hidden="true">↗</span></div></div>
+      </article>
+    </div>
+    <div class="film-collection-tail"><span>END OF SELECTION <span aria-hidden="true">/</span> MORE STORIES TO COME</span><a href="https://www.youtube.com/@Stephy_Production" target="_blank" rel="noopener noreferrer">MORE ON YOUTUBE <span aria-hidden="true">↗</span></a></div>
+  </div>
 </section>
 <!-- About -->
 <section aria-label="About Stephaun Martin" class="about-section vid-about" id="video-about">
