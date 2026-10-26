@@ -233,8 +233,8 @@ function _showLightboxFrame() {
 
 /* ============================================================
    PHOTO FILTER (SIDEBAR)
-   "All Work" is a curated 25-photo selection. Category filters still
-   show every image in that category, including supporting work.
+   "All Work" is a curated selection across every category. Category filters still
+   show the complete category, including photos assigned to multiple galleries.
    ============================================================ */
 function applyPhotoFilter(filter) {
   let count = 0;
@@ -242,10 +242,15 @@ function applyPhotoFilter(filter) {
   document.querySelectorAll('.photo-item').forEach(item => {
     const show = filter === 'all'
       ? item.dataset.featured === 'true'
-      : item.dataset.cat === filter;
+      : (item.dataset.cats || item.dataset.cat || '').split(/\s+/).includes(filter);
 
     item.classList.toggle('hidden', !show);
-    if (show) count++;
+    // A tile revealed by a later category selection may never have been
+    // observed by the initial page-transition animation.
+    if (show) {
+      item.classList.add('visible');
+      count++;
+    }
   });
 
   const grid = document.getElementById('photo-grid');
